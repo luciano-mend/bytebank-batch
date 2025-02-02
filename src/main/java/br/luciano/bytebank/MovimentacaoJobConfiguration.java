@@ -48,7 +48,7 @@ public class MovimentacaoJobConfiguration {
         return new FlatFileItemReaderBuilder<Movimentacao>()
                 .name("bank-movimentacao-csv")
                 .resource(new FileSystemResource("files/dados_ficticios.csv"))
-                .comments("Nome")
+                .linesToSkip(1)
                 .delimited()
                 .delimiter("|")
                 .names("nome", "cpf", "agencia", "conta", "valor", "mesReferencia")
